@@ -1,0 +1,421 @@
+.carousel-item {
+    transform: scale(0.85); /* Было: scale(0.85) perspective(1000px) rotateY(10deg) */
+}
+
+.carousel-item.active {
+    transform: scale(1); /* Было: scale(1) perspective(1000px) rotateY(0deg) */
+}
+
+.carousel-item.prev {
+    transform: scale(0.9) translateX(-10%); /* Было: scale(0.9) perspective(1000px) rotateY(15deg) translateX(-10%) */
+}
+
+.carousel-item.next {
+    transform: scale(0.9) translateX(10%); /* Было: scale(0.9) perspective(1000px) rotateY(-15deg) translateX(10%) */
+}
+/* ДОБАВЬ ЭТОТ КОД В СУЩЕСТВУЮЩИЙ СТИЛЬ */
+/* ==================================== */
+/* ОПТИМИЗАЦИЯ СИММЕТРИИ И ГРАФИЧЕСКОЙ ГАРМОНИИ */
+
+/* 1. Улучшение симметрии шапки */
+header {
+    padding: 40px 20px 30px;
+}
+
+.header-decoration {
+    gap: 60px; /* Увеличиваем расстояние для лучшей симметрии */
+    bottom: -30px; /* Опускаем окна чуть ниже */
+}
+
+.gingerbread-window {
+    width: 70px; /* Увеличиваем окна для лучшего визуального баланса */
+    height: 70px;
+    border-width: 5px;
+}
+
+/* 2. Симметрия главного блока */
+.main-content-wrapper {
+    align-items: stretch; /* Выравниваем высоту блоков */
+}
+
+.main-text {
+    padding: 60px 50px; /* Увеличиваем отступы для лучшей пропорции */
+    border-radius: 0 0 30px 30px;
+}
+
+.main-image {
+    height: auto; /* Автовысота для симметрии с текстовым блоком */
+    min-height: 600px;
+    border-radius: 30px;
+}
+
+/* 3. Выравнивание забора-карусели */
+.carousel-fence {
+    padding: 40px 0;
+}
+
+.carousel-fence::before,
+.carousel-fence::after {
+    height: 25px; /* Утолщаем забор */
+    background: repeating-linear-gradient(
+        90deg,
+        #8b4513 0px,
+        #8b4513 15px,
+        #ffd700 15px,
+        #ffd700 30px,
+        transparent 30px,
+        transparent 45px
+    );
+    background-size: 45px 100%;
+}
+
+/* 4. Симметрия плиток карусели */
+.carousel-item {
+    padding: 0 20px; /* Увеличиваем отступы между плитками */
+}
+
+.carousel-link {
+    padding: 40px 35px; /* Увеличиваем внутренние отступы */
+    border-radius: 25px;
+    box-shadow: 
+        0 15px 30px rgba(139, 69, 19, 0.3),
+        0 0 0 4px #d2691e,
+        0 0 0 8px #ffd700;
+}
+
+.carousel-link.active {
+    box-shadow: 
+        0 25px 50px rgba(139, 69, 19, 0.4),
+        0 0 0 5px #d2691e,
+        0 0 0 10px #ffd700,
+        0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+/* 5. Выравнивание номеров на плитках */
+.carousel-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    border-width: 4px;
+}
+
+/* 6. Симметрия изображений в плитках */
+.carousel-image-container {
+    height: 200px; /* Увеличиваем высоту для лучших пропорций */
+    margin: 25px 0;
+}
+
+/* 7. Центрирование контента в плитках */
+.carousel-link-title {
+    min-height: 60px; /* Фиксируем высоту для выравнивания */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.carousel-link-subtitle {
+    min-height: 50px; /* Фиксируем высоту подзаголовков */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* 8. Симметрия страниц-комнат */
+.page-content {
+    padding: 60px 50px; /* Увеличиваем отступы */
+}
+
+.page-images {
+    gap: 30px; /* Увеличиваем расстояние между изображениями */
+    margin: 40px 0;
+}
+
+.page-image {
+    flex: 1 1 calc(50% - 30px); /* Строгое выравнивание 50/50 */
+    min-width: 300px;
+    max-width: 500px; /* Ограничиваем максимальную ширину */
+    height: 280px; /* Фиксируем высоту для симметрии */
+}
+
+.page-image img {
+    height: 200px; /* Фиксируем высоту изображений */
+}
+
+/* 9. Центрирование и симметрия текста */
+.page-text {
+    padding: 40px;
+    text-align: center; /* Центрируем текст на страницах */
+    margin: 40px auto;
+    max-width: 90%;
+}
+
+/* 10. Выравнивание подвала */
+.footer {
+    padding: 50px 40px;
+}
+
+.footer p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* 11. Симметрия кнопки снега */
+.snow-button {
+    width: 80px;
+    height: 80px;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* 12. Симметрия плавающих конфет */
+.floating-candies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.candy {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s infinite ease-in-out;
+    font-size: 2rem;
+}
+
+/* 13. Центрирование заголовков */
+.header-title, .main-title, .carousel-title, .page-title {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 14. Симметрия индикаторов карусели */
+.carousel-indicators {
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.carousel-indicator {
+    width: 18px;
+    height: 18px;
+    border-width: 4px;
+}
+
+/* 15. Выравнивание стрелок карусели */
+.carousel-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 16. Центрирование главного текста */
+.main-content {
+    text-align: justify; /* Выравнивание по ширине */
+    hyphens: auto; /* Перенос слов для красоты */
+    padding: 40px;
+    margin: 40px 0;
+}
+
+/* 17. Симметрия кнопки "Назад" */
+.back-button {
+    margin: 40px auto;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 18. Градиенты для улучшения восприятия */
+.main-text, .carousel-container, .page-content {
+    background: linear-gradient(
+        145deg, 
+        #fffaf0 0%, 
+        #f5f0e6 50%, 
+        #fffaf0 100%
+    );
+}
+
+/* 19. Тени для глубины и симметрии */
+.main-text, .carousel-container, .page-content, .footer {
+    box-shadow: 
+        0 20px 40px rgba(139, 69, 19, 0.3),
+        inset 0 10px 30px rgba(255, 215, 0, 0.1),
+        inset 0 -10px 30px rgba(255, 215, 0, 0.1);
+}
+
+/* 20. Симметричные обводки */
+.main-text, .main-image, .carousel-container, .page-content {
+    border-width: 8px;
+    border-style: solid;
+    border-image: linear-gradient(145deg, #a0522d, #d2691e, #a0522d) 1;
+}
+
+/* 21. Центрирование счетчика страниц */
+.page-counter {
+    right: 50%;
+    transform: translateX(50%);
+    top: 20px;
+    min-width: 180px;
+    text-align: center;
+}
+
+/* 22. Симметрия подписей к изображениям */
+.main-image-caption, .page-image-caption {
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* 23. Оптимизация для разных размеров экрана */
+@media (max-width: 1200px) {
+    .main-content-wrapper {
+        gap: 30px;
+    }
+    
+    .carousel-item {
+        padding: 0 15px;
+    }
+    
+    .page-images {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Центрирование всех элементов на мобильных */
+    .main-text, .main-image, 
+    .carousel-container, .page-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95%;
+    }
+    
+    .header-decoration {
+        gap: 30px;
+    }
+    
+    .carousel-indicators {
+        gap: 15px;
+    }
+    
+    .page-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    /* Симметрия текста на мобильных */
+    .main-content, .page-text {
+        text-align: left;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Максимальная симметрия на маленьких экранах */
+    .header-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        padding: 0 10px;
+    }
+    
+    .main-title, .carousel-title, .page-title {
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    /* Центрирование всего контента */
+    .container {
+        padding: 10px;
+    }
+}
+
+/* 24. Новые анимации для симметрии */
+@keyframes symmetricalFloat {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg) scale(1); 
+    }
+    25% { 
+        transform: translateY(-15px) rotate(-5deg) scale(1.05); 
+    }
+    50% { 
+        transform: translateY(-30px) rotate(0deg) scale(1.1); 
+    }
+    75% { 
+        transform: translateY(-15px) rotate(5deg) scale(1.05); 
+    }
+}
+
+/* Применяем симметричную анимацию к конфеткам */
+.candy {
+    animation: symmetricalFloat 8s infinite ease-in-out;
+}
+
+/* 25. Симметричное распределение теней */
+.carousel-link, .page-image, .back-button {
+    box-shadow: 
+        0 10px 20px rgba(139, 69, 19, 0.2),
+        0 6px 6px rgba(139, 69, 19, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* 26. Гармоничные пропорции разделов */
+.carousel-section {
+    margin: 70px 0;
+}
+
+.page-content {
+    margin: 50px 0;
+}
+
+/* 27. Симметрия внутренних отступов всех контейнеров */
+.main-text, .carousel-container, .page-content, .footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* 28. Выравнивание иконок */
+.carousel-icon, .snow-button i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* 29. Симметричные рамки для изображений */
+.carousel-image-container, .page-image img {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 30. Финал - совершенная симметрия */
+.container > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Центрирование абсолютно всех элементов */
+.header, .main-content-wrapper, 
+.carousel-section, #pagesContainer, .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
